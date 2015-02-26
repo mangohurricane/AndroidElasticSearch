@@ -74,7 +74,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+		moviesViewAdapter = new ArrayAdapter<Movie>(this, R.layout.list_item,movies);
+		movieList.setAdapter(moviesViewAdapter);
+		movieManager = new ESMovieManager("");
+		movies=movieManager.getMovies();
 		
 
 		// Refresh the list when visible
